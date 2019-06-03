@@ -20,8 +20,16 @@ datosBusqueda = (termino) => {
 
 consultarAPI = () => {
   const termino = this.state.termino;
-  
-  const url ='https://swapi.co/api/films/termino';
+  const numpeli;
+  if (termino === 'A new Hope')
+  {
+    numpeli = 1;
+    
+  }
+  //Se busca por el nobmre que numero de pelicula es y se pasa a la URL
+  //Así se haría para todas las pelis de star war
+
+  const url ='https://swapi.co/api/films/numpeli';
 
   fetch(url)
   .then(respuesta => respuesta.json())
