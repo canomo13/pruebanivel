@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-//import Buscador from './componentes/Buscador';
 //import Resultado from './componentes/Resultado';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from './componentes/carrusel'
-
+import Resultado from './componentes/Resultado'
 
 class App extends Component{
 
@@ -23,67 +22,61 @@ busquedaRef = React.createRef();
         e.preventDefault();
         //Tomamos el valor del input
         const pelis = this.busquedaRef.current.value;
-
+       //Y hacemos una busqueda de la pelicula que introduce el usuario
         switch (pelis) 
         {
           case "A New Hope": 
           {
             const url ='https://swapi.co/api/films/1';
-        
-          fetch(url)
-          .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado))
+            fetch(url)
+            .then(respuesta => respuesta.json())
+            .then(resultado => console.log(resultado))
+          }
           break;
           }
           case "The Empire Strike Back": 
           {
             const url ='https://swapi.co/api/films/2';
-        
-          fetch(url)
-          .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado))
+            fetch(url)
+            .then(respuesta => respuesta.json())
+            .then(resultado => console.log(resultado))
           }
           case "The Jedi Return":
           {
             const url ='https://swapi.co/api/films/3';
-        
-          fetch(url)
-          .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado));
+            fetch(url)
+            .then(respuesta => respuesta.json())
+            .then(resultado => console.log(resultado));
             
           }
           case "The Phantom Menace":
             {
               const url ='https://swapi.co/api/films/4';
-        
-          fetch(url)
-          .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado))
+              fetch(url)
+              .then(respuesta => respuesta.json())
+              .then(resultado => console.log(resultado))
             }
           case "Attack of the Clones":
           {
             const url ='https://swapi.co/api/films/5';
-        
-          fetch(url)
-          .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado))
+            fetch(url)
+            .then(respuesta => respuesta.json())
+            .then(resultado => console.log(resultado))
           }
           case "Revenge of the Sith":
             {
               const url ='https://swapi.co/api/films/6';
-        
-          fetch(url)
-          .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado))
+              fetch(url)
+              .then(respuesta => respuesta.json())
+              .then(resultado => console.log(resultado))
             }
-            case "The Force Awakens":
-            {
+          case "The Force Awakens":
+          {
               const url ='https://swapi.co/api/films/7';
-        
-            fetch(url)
-          .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado))
-            }
+              fetch(url)
+              .then(respuesta => respuesta.json())
+              .then(resultado => console.log(resultado))
+          }
           default:
             return null;
           }
@@ -110,8 +103,12 @@ render (){
             </form>
       </div>
       <div>
+           <Respuesta />
+      </div>
+      <div>
         <Carousel />
-      </div> 
+      </div>
+
     </div>
   );
 }
